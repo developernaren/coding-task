@@ -89,9 +89,13 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'education.*.institution' => [
+            'required' => 'Education cannot be empty',
         ],
+        'education.*.passed_year' => [
+            'required' => 'Passed Year cannot be empty',
+        ],
+
     ],
 
     /*

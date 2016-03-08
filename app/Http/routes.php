@@ -27,5 +27,8 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+    Route::get('users/create',['uses' => 'UserController@create', 'as' => 'createUser'] );
+
+    Route::post('users/store', ['uses' => 'UserController@store','as' => 'postCreateUser'] );
 });
