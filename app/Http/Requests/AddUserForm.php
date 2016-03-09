@@ -27,14 +27,11 @@ class AddUserForm extends Request
             'name' => 'required',
             'gender' => 'required',
             'phone' => 'required',
-            'email' => 'required|email|unique:users.email',
+            'email' => 'required|email|unique:users',
             'address' => 'required',
             'country' => 'required',
             'dob' => 'required',
-            'contact_mode' => 'required',
-            'image' => 'required',
-            'education.*.institution' => 'required',
-            'education.*.passed_year' => 'required',
+            'contact_mode' => 'required'
         ];
     }
 }

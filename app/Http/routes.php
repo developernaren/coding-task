@@ -32,3 +32,12 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('users/store', ['uses' => 'UserController@store','as' => 'postCreateUser'] );
 });
+
+
+Route::group(['prefix' => 'api'], function() {
+
+    Route::get('education', 'ApiController@getAllEducation');
+
+    Route::get('countries', 'ApiController@getAllCountries');
+
+});

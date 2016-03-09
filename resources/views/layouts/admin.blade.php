@@ -1,8 +1,10 @@
-<html>
+<html ng-app="coding-task">
 <head>
     <title>
         Coding Task
     </title>
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" type="text/javascript"></script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -19,6 +21,15 @@
 
     @yield('content')
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js" type="text/javascript"></script>
+
+
+<script src="{!! asset('app/app.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('app/user/user.service.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('app/user/user.controller.js') !!}" type="text/javascript"></script>
+
+
+
 
 </body>
 

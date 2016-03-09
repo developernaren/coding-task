@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -23,4 +23,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    function education( ) {
+
+        return $this->belongsToMany( Education::class, 'user_education')
+            ->withPivot(['institution','passed_year']);
+    }
 }
