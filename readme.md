@@ -1,27 +1,47 @@
-# Laravel PHP Framework
+# Coding Task
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Technologies used
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+* Laravel 5.2
+* Mysql
+* jQuery
+* Angular Js
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Generating Description
 
-## Official Documentation
+I have tried to follow the repository pattern in this task. Since the true respository pattern decouples Data Access 
+Layer (DAL) with the application and logic layer, I am trying to make the underlying data access layer dynamic. The task
+says that we should save the data in a file but I will first save the data to a mysql database. I will write another
+repo class to make the data save / fetch in/from a CSV file.
+  
+### For the first release
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+* User add is complete 
+    - User can go to the url users/create and add a user
+    
+### For future release
 
-## Contributing
+* The multiple education will be added where the education will be added with help of angularJs ( the add button works 
+but does not save to database)
+* The javascript validation will be done
+* Valid data will be saved to the CSV and will be displayed by reading the saved file
+* Write functional tests
+* Few more styling will be added to make this look good
+* All the assets file will be fetched from local files
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
+### Special Note:
+I was away trekking in Poonhill for four days, I have [http://kurtapasal.com](kurtapasal.com) that I am working on ( my wife's project )
+and I am going away to Riverside Resort this Saturday and Sunday, so I will not be able to work on this. Please consider 
+reviewing this code at the moment and give suggestions. I will complete this next week anyhow and you can give further suggestions
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+I have tried to do everything that I thought is the right way to do in this because I really want to learn the best ways to 
+do things.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+
+  
+  
+  
+  
