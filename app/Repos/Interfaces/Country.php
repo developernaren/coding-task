@@ -12,10 +12,21 @@ namespace App\Repos\Interfaces;
 interface Country
 {
 
+    /**
+     * Get Name of the country
+     * @return mixed
+     */
     function name();
 
+    /**
+     * Get code of a country
+     * @return mixed
+     */
     function code();
 
+    /**get all the countries
+     * @return mixed
+     */
     function all();
 
 }

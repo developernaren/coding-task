@@ -19,6 +19,11 @@ class CountryRepository implements Country
     private $name;
     private $code;
 
+    /**
+     * CountryRepository constructor.
+     * @param null $attributes
+     */
+
     function __construct( $attributes = NULL )
     {
 
@@ -26,23 +31,39 @@ class CountryRepository implements Country
 
     }
 
+    /**
+     * Sets the attributes of the object
+     */
     private function init() {
 
         $this->name = $this->country->name;
         $this->code = $this->country->code;
     }
 
+    /**
+     * Return name of the country
+     * @return mixed
+     */
+
     function name()
     {
         return $this->name;
     }
 
+    /**
+     * Return code of the country
+     * @return mixed
+     */
     function code()
     {
 
         return $this->code;
     }
 
+    /**
+     * Return all the countries list
+     * @return \Illuminate\Support\Collection
+     */
     function all()
     {
         //created a collection object

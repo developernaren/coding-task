@@ -2,14 +2,33 @@
 
 interface User
 {
+    /**
+     * Adds multiple education to a user
+     * @param array $educations
+     * @return mixed
+     */
 
     function addEducations( array $educations );
 
-
+    /**
+     * Adds single education to a user
+     * @param Education $education
+     * @return mixed
+     */
     function addEducation( Education $education );
 
+    /**
+     * Get User education
+     * @return mixed
+     */
     function education( );
 
+
+    /**
+     * Save user data
+     * @return mixed
+     *
+     */
 
     function save();
     /**

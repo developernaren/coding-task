@@ -17,6 +17,10 @@ class UserRepository implements \App\Repos\Interfaces\User
     private $dob;
     private $contactMode;
 
+    /**
+     * UserRepository constructor.
+     * @param null $attributes
+     */
     function __construct( $attributes = NULL )
     {
 
@@ -24,24 +28,42 @@ class UserRepository implements \App\Repos\Interfaces\User
 
     }
 
+    /**
+     * Add multiple educations to a user
+     * @param array $educations
+     * @return mixed
+     */
     function addEducations( array $educations ) {
 
         return $this->user->education()->saveMany( $educations );
     }
 
 
+    /**
+     * Add a single Education to a user
+     * @param Education $education
+     * @return bool
+     */
     function addEducation( Education $education ) {
 
         return $this->user->education()->save( $education );
 
     }
 
+    /**
+     * Fetch education of a user
+     * @return mixed
+     */
     function education( ) {
 
         return $this->user->education;
     }
 
 
+    /**
+     * saves user data
+     * @return bool
+     */
     function save() {
         return $this->user->save();
     }
