@@ -1,0 +1,9 @@
+box:
+  id: developernaren/coding-task
+  cmd: /bin/sh
+
+build:
+  steps:
+    - script:
+        name: install dependencies
+        code: composer install --no-interaction --prefer-source
