@@ -57,8 +57,12 @@
             </div>
 
             <div class="form-group" ng-repeat="education in user.educations track by $index">
-                <select name="education_level[@{{ $index }}][education_level]" class="col-xs-4">
-                    <option>Choose Education</option>
+                <select class="col-xs-4"
+                        name="education[@{{ $index }}][name]"
+                        ng-model="educationSelect"
+                    ng-options="educationList.name for educationList in user.allEducations track by educationList.name"
+                >
+                    <option value="">Choose Education</option>
                 </select>
                 <input type="text" name="education[@{{ $index }}][institution]" placeholder="Institution" class="col-xs-4">
                 <input type="text" name="education[@{{ $index }}][passed_year]" placeholder="Passed Year" class="col-xs-4">

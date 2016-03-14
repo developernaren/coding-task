@@ -27,7 +27,7 @@ class AddUserForm extends Request
             'name' => 'required',
             'gender' => 'required',
             'phone' => 'required',
-            'email' => 'required|email|unique:users',
+            //'email' => 'required|email|unique:users',
             'address' => 'required',
             'country' => 'required',
             'dob' => 'required',

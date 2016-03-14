@@ -3,6 +3,7 @@
 use App\Entities\Country;
 use App\Entities\User;
 use App\Repos\Interfaces\Education;
+use App\Entities\Education as EloquentEducation;
 
 class UserRepository implements \App\Repos\Interfaces\User
 {
@@ -35,7 +36,30 @@ class UserRepository implements \App\Repos\Interfaces\User
      */
     function addEducations( array $educations ) {
 
-        return $this->user->education()->saveMany( $educations );
+        $educationNameArr = [];
+
+        foreach( $educations as $education ) {
+
+            $educationNameArr[] = $education->getName();
+
+        }
+
+        $eloquentEducations = EloquentEducation::withNames( $educationNameArr )->get();
+        $nameIdArr = [];
+
+        foreach( $eloquentEducations as $eEducation ) {
+            $nameIdArr[ $eEducation->name ] = $eEducation->id;
+        }
+
+        $eloquentEducationArr = [];
+
+        foreach( $educations as $e ) {
+
+            $eloquentEducationArr[ $nameIdArr[ $e->name ] ] = ['institution' => $e->institution, 'passed_year' => $e->passedYear ];
+
+        }
+
+        return $this->user->education()->sync( $eloquentEducationArr );
     }
 
 
@@ -61,11 +85,13 @@ class UserRepository implements \App\Repos\Interfaces\User
 
 
     /**
-     * saves user data
-     * @return bool
+     * @return User
      */
     function save() {
-        return $this->user->save();
+
+        $this->user->save();
+        $userArr = $this->user->toArray();
+        return new User( $userArr );
     }
 
     /**

@@ -1,11 +1,9 @@
-<?php
-
-namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use App\Repos\Interfaces\Country;
+use App\Repos\Interfaces\Education;
 use App\Repos\Interfaces\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class UserController extends Controller
@@ -13,18 +11,21 @@ class UserController extends Controller
 
     private $user;
     private $country;
+    private $education;
 
-    function __construct( User $user, Country $country )
+    function __construct( User $user, Country $country, Education $education )
     {
 
         $this->user = $user;
         $this->country = $country;
+        $this->education = $education;
 
     }
 
     function create() {
 
         $countries = $this->country->all();
+
         $contactModes = [
             'email' => 'Email',
             'phone' => 'Phone',
@@ -37,6 +38,8 @@ class UserController extends Controller
 
     function store( Requests\AddUserForm $request ) {
 
+
+
         $this->user->setName( $request->name );
         $this->user->setAddress( $request->address );
         $this->user->setContactMode( $request->contact_mode );
@@ -47,7 +50,17 @@ class UserController extends Controller
         $this->user->setPhone( $request->phone );
         $this->user->save();
 
+        $educationArr = [];
+        foreach( $request->education as $education ) {
 
+            $educationClass = get_class( $this->education );
+            $thisEducation = new $educationClass( $education );
+            $thisEducation->init();
+            $educationArr[] = $thisEducation;
+        }
+
+
+        $this->user->addEducations( $educationArr );
 
     }
 }

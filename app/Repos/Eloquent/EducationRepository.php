@@ -8,6 +8,8 @@ class EducationRepository implements Education
 
     public $name;
     public $id;
+    public $institution;
+    public $passedYear;
     private $education;
 
 
@@ -22,6 +24,9 @@ class EducationRepository implements Education
 
         $this->name = $this->education->name;
         $this->id = $this->education->id;
+        $this->institution = $this->education->institution;
+        $this->passedYear = $this->education->passed_year;
+
 
     }
     /**

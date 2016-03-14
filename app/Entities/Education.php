@@ -14,8 +14,18 @@ use Illuminate\Database\Eloquent\Model;
 class Education extends Model
 {
 
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'name','institution','passed_year'];
 
 
+    function scopeWithName( $q, $name ) {
+
+        return $q->whereName( $name );
+    }
+
+
+    function scopeWithNames( $q, $nameArr ) {
+
+        return $q->whereIn( 'name', $nameArr );
+    }
 
 }

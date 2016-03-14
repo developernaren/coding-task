@@ -14,6 +14,11 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script >
+
+        var baseUrl = "{{ url('/') }}";
+
+    </script>
 </head>
 <body>
 
@@ -26,6 +31,7 @@
 
 <script src="{!! asset('app/app.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('app/user/user.service.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('app/user/education.service.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('app/user/user.controller.js') !!}" type="text/javascript"></script>
 
 

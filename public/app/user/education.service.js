@@ -1,23 +1,23 @@
 (function(){
 
     angular.module('coding-task')
-        .factory('Education', [ $q, $http, Education ]  );
+        .factory('Education', [ '$q', '$http', Education ]  );
 
 
     function Education( $q, $http ) {
 
         education = {};
 
-        education.getEducation = getEducation;
+        education.getAllEducation = getAllEducation;
 
         return education;
 
 
-        function getEducation() {
+        function getAllEducation() {
 
             return $q( function ( resolve, reject ) {
 
-                $http.get('education', function( res ) {
+                $http.get( baseUrl + '/api/education').success( function( res ) {
 
                     resolve( res );
                 })
