@@ -59,8 +59,12 @@ class UserController extends Controller
             $educationArr[] = $thisEducation;
         }
 
-
         $this->user->addEducations( $educationArr );
 
+
+
     }
+
+
+
 }
