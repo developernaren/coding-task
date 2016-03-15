@@ -4,6 +4,9 @@ box:
 
 build:
   steps:
+  -script
+        name: install curl
+        code: sudo apt-get install curl
   - script:
         name: install composer
         code: curl -sS https://getcomposer.org/installer | php
