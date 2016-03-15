@@ -1,5 +1,5 @@
 box:
-  id: developernaren/coding-task
+  id: dydx/alpine-nginx-phpfpm
   cmd: /bin/sh
 
 build:
