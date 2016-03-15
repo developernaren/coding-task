@@ -4,7 +4,7 @@ box:
 
 build:
   steps:
-  -script
+  - script:
         name: install curl
         code: sudo apt-get install curl
   - script:
