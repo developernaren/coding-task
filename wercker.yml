@@ -1,15 +1,9 @@
 box:
-  id: dydx/alpine-nginx-phpfpm
+  id: geshan/docker-php-composer-alpine
   cmd: /bin/sh
 
 build:
   steps:
   - script:
-        name: install curl
-        code: sudo apt-get install curl
-  - script:
-        name: install composer
-        code: curl -sS https://getcomposer.org/installer | php
-  - script:
-        name: install dependencies
-        code: php composer.phar install --no-interaction
+          name: install dependencies
+          code: composer install --no-interaction
