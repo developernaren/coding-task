@@ -3,7 +3,6 @@ box:
   cmd: /bin/sh
 dev:
   steps:
-    - install-packages:
         packages: git
     - script:
         name: install composer
@@ -16,8 +15,6 @@ dev:
         reload: true
 build:
   steps:
-    - install-packages:
-        packages: git
     - script:
         name: install phpunit
         code: |-
